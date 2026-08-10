@@ -11,7 +11,7 @@ export interface TotalItem {
   entries: TotalEntry[];
 }
 
-// Matches lines like "Cement 50", "Saria: 200", "سیمنٹ 50", "सीमेंट - 100rs".
+// Requires at least one space between the name and the amount.
 // \p{L}\p{M} covers Latin, Devanagari (Hindi) and Arabic (Urdu) letters.
 const LINE_PATTERN =
   /^([\p{L}\p{M}][\p{L}\p{M}\s.,'’-]*?)[\s:\-=]+([0-9]+(?:\.[0-9]+)?)\s*(?:rs\.?|rupees?|rupaye|rupya|₹|\/-)?\s*$/iu;
